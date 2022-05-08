@@ -30,7 +30,7 @@ const Preview = ({ item, handlePreview }) => {
             </big>{" "}
             {item.volumeInfo.subtitle
               ? item.volumeInfo.subtitle
-              : "No Subtitle"}
+              : "No Subtitle Available"}
           </div>
           <div className="rating">
             <big>

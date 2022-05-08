@@ -8,7 +8,7 @@ import { HiAdjustments } from "react-icons/hi";
 
 import Button from "../button/Button";
 
-function Header({ handleInput, handleSubject, subject, handlePage }) {
+function Header({ handleInput, handleSubject, subject, handlePage, handleRating, handlePrice, price, rating}) {
   let genre = subject;
 
   const headerRef = useRef(null);
@@ -68,13 +68,13 @@ function Header({ handleInput, handleSubject, subject, handlePage }) {
             <div className="filter" ref={filterRef}>
               <ul className="lists">
                 <li className="list-one">
-                  <label htmlFor="rating">Price</label>
-                  <input type="range" className="range" min={100} max={10000} />
+                  <label htmlFor="price">Price</label>
+                  <input type="range" className="range" min={100} max={10000} value={price} onChange={handlePrice}/>
                 </li>
 
                 <li className="list-one">
                   <label htmlFor="rating">Rating</label>
-                  <input type="range" className="range" min={1} max={500} />
+                  <input type="range" className="range" min={1} max={500} value={rating} onChange={handleRating}/>
                 </li>
 
                 <li>

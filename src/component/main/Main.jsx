@@ -19,6 +19,8 @@ function Main() {
   const [increment, setIncrement] = useState(0);
   const apiKey = "AIzaSyDqe5GUyT60OK1keY7cNXY4Fu91DU3k5vw";
   const [genreType, setGenreType] = useState("");
+  const [price, setPrice] = useState(10000);
+  const [rating, setRating] = useState(500);
 
   const url = `https://www.googleapis.com/books/v1/volumes?q=${input}+${
     genreType ? "subject" : ""
@@ -64,6 +66,30 @@ function Main() {
     setGenreType(e.target.value);
   };
 
+  const handlePrice = (e) => {
+    setPrice(e.target.value);
+    // if(price<10000){
+    // setData(data.filter((item)=>{
+    //   return (
+    //     item.saleInfo.retailPrice.amount<=price
+    //   )
+    // }))
+    // }
+  };
+
+  const handleRating = (e) => {
+    setRating(e.target.value);
+    // if(rating<500){
+    // setData(data.filter((item)=>{
+    //   console.log(item.volumeInfo.averageRating)
+    //   return (
+    //     item.volumeInfo.averageRating<=(rating/100)
+    //   )
+    // }))
+    // console.log(rating/100)
+    // }
+  };
+
   useEffect(() => {
     const apiRender = async () => {
       try {
@@ -86,6 +112,10 @@ function Main() {
         handleSubject={handleSubject}
         subject={genreType}
         handlePage={handlePage}
+        handlePrice={handlePrice}
+        handleRating={handleRating}
+        price={price}
+        rating={rating}
       />
 
       <Model data={data} />
