@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+.header {
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: height 0.3s ease, background-color 0.3s ease;
+  color: white;
+  font-size: 2rem;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.shrink {
+  height: 4.5rem;
+  background-color: #000000ec;
+}
+
+.logo {
+  color: #007aff;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 800;
+  padding: 5px 0 0 10px;
+  font-size: 2rem;
+  font-family: "Koulen", cursive;
+  cursor: pointer;
+}
+
+.half-logo {
+  background: linear-gradient(45deg, #007aff, blue);
+  animation: hue-rotate 1s linear infinite alternate;
+  font-family: "Koulen", cursive;
+  color: #fff;
+  letter-spacing: 2px;
+  padding: 0;
+}
+
+.search,
+.form {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.form {
+  margin: 0 1rem;
+}
+
+.filter-container {
+  position: relative;
+}
+
+.filter {
+  position: absolute;
+  background-color: #000000f5;
+  display: none;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter.open {
+  display: block;
+}
+
+.lists {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.lists > li {
+  width: 140px;
+  height: 70px;
+}
+
+.list-one,
+.list-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.range {
+  width: 90px;
+  margin: 0;
+}
+
+.genre {
+  margin: 0;
+  width: 140px;
+}
+
+label {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.input {
+  width: 90%;
+  max-width: 500px;
+  min-width: 140px;
+  height: 40px;
+  margin: 1rem 0;
+  padding: 15px;
+  outline: none;
+  border: 1px solid #007aff;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  background: linear-gradient(#111111, #111111),
+    linear-gradient(to right, red, purple, #007aff, blue);
+  background-origin: padding-box, border-box;
+  background-repeat: no-repeat;
+  border: 0.5px solid transparent;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.input::placeholder {
+  color: white;
+  opacity: 0.7;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .header-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header {
+    height: 6.5rem;
+  }
+
+  .shrink {
+    height: 7rem;
+  }
+
+  .search {
+    justify-content: space-between;
+  }
+
+  .logo {
+    padding: 5px;
+    font-size: 1.5rem;
+  }
+
+  .form {
+    margin-right: 0;
+  }
+}

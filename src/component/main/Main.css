@@ -1,0 +1,82 @@
+.main {
+  margin-top: 6rem;
+}
+
+.card-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin: 1rem;
+}
+
+.card-single {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.card-layout {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+select,
+option {
+  color: white;
+  background-color: #000;
+  margin: 10px 10px 10px 25px;
+  height: 40px;
+  width: 100px;
+  outline: none;
+  font-size: 1rem;
+  border: 1px solid #007aff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+select:focus {
+  background: linear-gradient(#111111, #111111),
+    linear-gradient(to right, red, purple, #007aff);
+  background-origin: padding-box, border-box;
+  background-repeat: no-repeat;
+  border: 0.5px solid transparent;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
+
+@media screen and (max-width: 1170px) {
+  .card-layout {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card-layout {
+    grid-template-columns: auto;
+    margin-top: 6.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-layout {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6.5rem;
+  }
+}
+
+@keyframes hue-rotate {
+  to {
+    filter: hue-rotate(90deg);
+  }
+}

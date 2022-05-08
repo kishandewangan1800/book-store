@@ -1,0 +1,14 @@
+.input-filds {
+  margin-top: 1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500) {
+  .input-filds {
+    margin-top: 2rem;
+  }
+}
