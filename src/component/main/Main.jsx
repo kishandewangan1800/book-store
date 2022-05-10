@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "./Main.css";
 
@@ -64,27 +64,30 @@ function Main() {
     setGenreType(e.target.value);
   };
 
-  const handlePrice = (e) => {
+  const handlePrice = 
+  useCallback((e) => {
     setPrice(e.target.value);
-    // console.log(rating)
     setData(originaldata.filter((item)=>{
       return (
         Number(item.volumeInfo.averageRating) <= Number(rating/10) && Number(item.saleInfo.retailPrice.amount) <= Number(price)
       )
     }))
-  };
+  },
+    [originaldata, price, rating],
+  )
+  
 
-  const handleRating = (e) => {
+  const handleRating = 
+  
+  useCallback((e) => {
     setRating(e.target.value);
-    // console.log(price)
     setData(originaldata.filter((item)=>{
       return (
         Number(item.saleInfo.retailPrice.amount) <= Number(price) && Number(item.volumeInfo.averageRating) <= Number(rating/10)
         
       )
     }))
-
-  };
+  },[originaldata, price, rating]);
 
   useEffect(() => {
     const apiRender = async () => {
