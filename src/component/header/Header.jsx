@@ -20,6 +20,7 @@ function Header({
 }) {
   let genre = subject;
 
+  
   const headerRef = useRef(null);
   const submitRef = useRef(null);
   const filterRef = useRef(null);
@@ -41,8 +42,10 @@ function Header({
         document.documentElement.scrollTop > 100
       ) {
         headerRef.current.classList.add("shrink");
+        filterRef.current.classList.remove('open');
       } else {
         headerRef.current.classList.remove("shrink");
+        filterRef.current.classList.remove('open');
       }
     };
     window.addEventListener("scroll", shrinkHeader);

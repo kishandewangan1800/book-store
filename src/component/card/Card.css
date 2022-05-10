@@ -15,7 +15,6 @@
 }
 
 .card:hover {
-  position: relative;
   background: linear-gradient(#ffffff, #d7ebff),
     linear-gradient(to right, red, purple, blue);
   background-origin: padding-box, border-box;

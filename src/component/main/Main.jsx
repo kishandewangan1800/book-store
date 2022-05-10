@@ -16,7 +16,7 @@ function Main() {
 
   const [number, setNumber] = useState(10);
   const [increment, setIncrement] = useState(0);
-  const apiKey = "AIzaSyDqe5GUyT60OK1keY7cNXY4Fu91DU3k5vw";
+  const apiKey = "AIzaSyC01GE2ShjusrtKLMG9dJ6g9TyrQu-I7mA";
   const [genreType, setGenreType] = useState("");
   const [price, setPrice] = useState(10000);
   const [rating, setRating] = useState(50);
