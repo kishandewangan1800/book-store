@@ -3,10 +3,11 @@
   height: 40px;
   margin-right: 10px;
   border-radius: 5px;
-  background-color: #000;
-  border: 1px solid #007aff;
-  color: white;
+  background-color: #ffffff;
+  border: 2px solid #007aff;
+  color: black;
   font-size: 1rem;
+  font-weight: 900;
   cursor: pointer;
 }
 
@@ -18,10 +19,14 @@
 
 .btn:disabled:hover {
   cursor: not-allowed;
-  background: linear-gradient(45deg, #000, gray);
+  background: linear-gradient(45deg, gray, black);
+  font-weight: 500;
+  color: white;
 }
 
 .btn:hover {
   background: linear-gradient(45deg, #007aff, blue);
   animation: hue-rotate 0.5s linear infinite alternate;
+  font-weight: 500;
+  color: white;
 }

@@ -65,7 +65,11 @@ function Header({
           }}
         >
           {" "}
-          <IoBookSharp style={{ fontSize: "2.5rem" }} /> Book
+          <IoBookSharp
+            style={{ fontSize: "2.5rem", color: "#007aff", marginRight: "5px" }}
+            className="bookstore"
+          />{" "}
+          Book
           <span className="half-logo">Store</span>
         </div>
         <div className="search">
@@ -76,30 +80,6 @@ function Header({
 
             <div className="filter" ref={filterRef}>
               <ul className="lists">
-                <li className="list-one">
-                  <label htmlFor="price">Price</label>
-                  <input
-                    type="range"
-                    className="range"
-                    min={100}
-                    max={10000}
-                    value={price}
-                    onChange={handlePrice}
-                  />
-                </li>
-
-                <li className="list-one">
-                  <label htmlFor="rating">Rating</label>
-                  <input
-                    type="range"
-                    className="range"
-                    min={1}
-                    max={500}
-                    value={rating}
-                    onChange={handleRating}
-                  />
-                </li>
-
                 <li>
                   <select
                     value={genre}
@@ -114,6 +94,40 @@ function Header({
                     ))}
                   </select>
                 </li>
+
+                <li>
+                  <div className="data"> {`${price} INR`} </div>
+
+                  <div className="list-one">
+                    <label htmlFor="price">Price</label>
+
+                    <input
+                      type="range"
+                      className="range"
+                      min={100}
+                      max={10000}
+                      value={price}
+                      onChange={handlePrice}
+                    />
+                  </div>
+                </li>
+
+                <li>
+                  <div className="data">{`${rating / 10} Star`}</div>
+
+                  <div className="list-one">
+                    <label htmlFor="rating">Rating</label>
+                    <input
+                      type="range"
+                      className="range"
+                      min={1}
+                      max={50}
+                      value={rating}
+                      onChange={handleRating}
+                    />
+                  </div>
+                </li>
+
                 <li>
                   <Button
                     size={140}

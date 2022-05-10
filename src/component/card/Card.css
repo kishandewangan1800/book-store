@@ -6,7 +6,7 @@
   display: flex;
   justify-content: flex-start;
   border-radius: 10px;
-  border: 0.5px solid #111111;
+  border: 1px solid #007aff;
   overflow: hidden;
   margin: 0.5rem;
   background-color: #00000000;
@@ -14,11 +14,12 @@
 }
 
 .card:hover {
-  background: linear-gradient(#111111, #111111),
-    linear-gradient(to right, red, purple, #007aff);
+  position: relative;
+  background: linear-gradient(#ffffff, #d7ebff),
+    linear-gradient(to right, red, purple, blue);
   background-origin: padding-box, border-box;
   background-repeat: no-repeat;
-  border: 0.5px solid transparent;
+  border: 1px solid transparent;
   border-radius: 2px;
 }
 
@@ -45,7 +46,7 @@ img {
 }
 
 a {
-  background: linear-gradient(45deg, #007aff, blue, yellow, white);
+  background: linear-gradient(45deg, black, purple, blue, #007aff);
   animation: hue-rotate 0.5s linear infinite alternate;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

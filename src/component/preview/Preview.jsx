@@ -64,7 +64,7 @@ const Preview = ({ item, handlePreview }) => {
               ? " " +
                 item.saleInfo.retailPrice.amount +
                 " " +
-                item.saleInfo.listPrice.currencyCode
+                item.saleInfo.retailPrice.currencyCode
               : " Not Available"}
           </div>
           <div className="page-count">
@@ -77,7 +77,7 @@ const Preview = ({ item, handlePreview }) => {
           </div>
           <div className="isbn">
             <big>
-              <b> Isbn : </b>
+              <b> ISBN : </b>
             </big>{" "}
             {item.volumeInfo.industryIdentifiers
               ? item.volumeInfo.industryIdentifiers[0].identifier
@@ -85,7 +85,7 @@ const Preview = ({ item, handlePreview }) => {
           </div>
           <div className="published">
             <big>
-              <b> Published : </b>
+              <b> Published On : </b>
             </big>{" "}
             {item.volumeInfo.publishedDate
               ? item.volumeInfo.publishedDate
@@ -106,11 +106,11 @@ const Preview = ({ item, handlePreview }) => {
         <big>
           <b> Description : </b>
         </big>
-        <span>
+        <div className="span">
           {item.volumeInfo.description
             ? item.volumeInfo.description
             : "Please go back to the Page and click on More !"}
-        </span>
+        </div>
       </div>
     </div>
   );

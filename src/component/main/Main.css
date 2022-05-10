@@ -24,20 +24,24 @@
 
 select,
 option {
-  color: white;
-  background-color: #000;
+  color: black;
+  background-color: white;
   margin: 10px 10px 10px 25px;
   height: 40px;
   width: 100px;
   outline: none;
   font-size: 1rem;
-  border: 1px solid #007aff;
+  border: 2px solid #007aff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px 10px;
+}
+
+select {
+  font-weight: 900;
 }
 
 select:focus {
-  background: linear-gradient(#111111, #111111),
+  background: linear-gradient(#ffffff, #ffffff),
     linear-gradient(to right, red, purple, #007aff);
   background-origin: padding-box, border-box;
   background-repeat: no-repeat;

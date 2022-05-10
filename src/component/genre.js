@@ -20,26 +20,23 @@ export const categoryList = [
   "Poetry",
   "Self-Help",
   "True Crime",
-];
+].sort();
 
 export const genreList = [
+  "Computer Science",
   "Business",
   "Fantasy",
-  "Children's",
+  "Fiction",
   "Literary Fiction",
   "Science Fiction",
   "Thrillers",
-  "Middle Grade",
-  "Picture Book",
+  "Love Story",
   "Romance",
   "Historical",
-  "Memoir",
   "Self-Help",
   "Narrative",
   "Religion",
-  "Cultural",
   "Biography",
   "History",
-  "Non-Fiction",
   "Politics",
-];
+].sort();

@@ -20,7 +20,7 @@
 
 .shrink {
   height: 4.5rem;
-  background-color: #000000ec;
+  background: linear-gradient(45deg, #ffffff, #d7ebff);
 }
 
 .logo {
@@ -46,6 +46,14 @@
   padding: 0;
 }
 
+.bookstore {
+  color: white;
+  background: linear-gradient(45deg, #007aff, blue);
+  animation: hue-rotate 1s linear infinite alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .search,
 .form {
   display: flex;
@@ -63,11 +71,13 @@
 
 .filter {
   position: absolute;
-  background-color: #000000f5;
+  background-color: #ffffff;
+  color: black;
   display: none;
   border-radius: 10px;
   padding: 1rem;
   transition: all 0.2s ease-in-out;
+  border: 1px solid #007aff;
 }
 
 .filter.open {
@@ -82,7 +92,13 @@
 
 .lists > li {
   width: 140px;
-  height: 70px;
+  height: 50px;
+}
+
+.data {
+  font-size: 1rem;
+  text-align: end;
+  margin: 3px 0;
 }
 
 .list-one,
@@ -103,7 +119,7 @@
 }
 
 label {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -115,14 +131,14 @@ label {
   margin: 1rem 0;
   padding: 15px;
   outline: none;
-  border: 1px solid #007aff;
-  background-color: transparent;
+  border: 2px solid #007aff;
+  background-color: white;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .input:focus {
-  background: linear-gradient(#111111, #111111),
+  background: linear-gradient(#ffffff, #ffffff),
     linear-gradient(to right, red, purple, #007aff, blue);
   background-origin: padding-box, border-box;
   background-repeat: no-repeat;
@@ -132,7 +148,7 @@ label {
 }
 
 .input::placeholder {
-  color: white;
+  color: gray;
   opacity: 0.7;
   font-size: 1rem;
 }

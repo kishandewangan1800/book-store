@@ -1,9 +1,17 @@
 .input-filds {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
+  background: linear-gradient(0deg, #ffffff, #d7ebff);
 }
 
 .button-container {
   display: flex;
+  margin: 0;
   justify-content: center;
 }
 

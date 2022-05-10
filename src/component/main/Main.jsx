@@ -11,20 +11,18 @@ import Footer from "../footer/Footer";
 
 function Main() {
   const [data, setData] = useState([]);
-  const [input, setInput] = useState(
-    categoryList[Math.floor(Math.random() * categoryList.length)]
-  );
+  const [originaldata, setOriginaldata] = useState([]);
+  const [input, setInput] = useState('');
 
   const [number, setNumber] = useState(10);
   const [increment, setIncrement] = useState(0);
   const apiKey = "AIzaSyDqe5GUyT60OK1keY7cNXY4Fu91DU3k5vw";
   const [genreType, setGenreType] = useState("");
   const [price, setPrice] = useState(10000);
-  const [rating, setRating] = useState(500);
+  const [rating, setRating] = useState(50);
 
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${input}+${
-    genreType ? "subject" : ""
-  }:${genreType}&key=${apiKey}&maxResults=40`;
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${input}+${genreType ? "subject" : ""
+    }:${genreType}&key=${apiKey}&maxResults=40`;
 
   const handlePage = () => {
     setInput(categoryList[Math.floor(Math.random() * categoryList.length)]);
@@ -68,34 +66,50 @@ function Main() {
 
   const handlePrice = (e) => {
     setPrice(e.target.value);
-    // if(price<10000){
-    // setData(data.filter((item)=>{
-    //   return (
-    //     item.saleInfo.retailPrice.amount<=price
-    //   )
-    // }))
-    // }
+    setData(originaldata.filter((item)=>{
+      return (
+        item.saleInfo.retailPrice.amount<=price
+      )
+    }))
   };
 
   const handleRating = (e) => {
     setRating(e.target.value);
-    // if(rating<500){
-    // setData(data.filter((item)=>{
-    //   console.log(item.volumeInfo.averageRating)
-    //   return (
-    //     item.volumeInfo.averageRating<=(rating/100)
-    //   )
-    // }))
-    // console.log(rating/100)
-    // }
+    setData(originaldata.filter((item)=>{
+      return (
+        item.volumeInfo.averageRating<=(rating/10)
+      )
+    }))
+
   };
 
   useEffect(() => {
     const apiRender = async () => {
       try {
         const response = await axios.get(url);
-        const result = await response.data.items;
+        let result = await response.data.items;
+
+        for (let i = 0; i < result.length; i++) {
+          if (!result[i].volumeInfo.averageRating) {
+            result[i].volumeInfo.averageRating = (Math.random() * 4.9 + 0.1).toFixed(1)
+          }
+
+          if (result[i].saleInfo.saleability==="NOT_FOR_SALE") {
+  
+            result[i].saleInfo =  {   
+              ...result[i].saleInfo, saleability : "FOR_SALE", retailPrice:{
+                amount:(Math.random() * 9900 + 100).toFixed(2),
+                currencyCode: 'INR'
+              }
+            }
+              
+          }
+          
+           
+        }   
+
         setData(result.splice(increment, number));
+        setOriginaldata(result.splice(increment, number));
       } catch (err) {
         // console.log(err);
         // console.log(increment, number, input)

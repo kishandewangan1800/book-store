@@ -59,7 +59,7 @@ function Card({ item }) {
                 ? " " +
                   item.saleInfo.retailPrice.amount +
                   " " +
-                  item.saleInfo.listPrice.currencyCode
+                  item.saleInfo.retailPrice.currencyCode
                 : " Not Available"}
             </div>
 
