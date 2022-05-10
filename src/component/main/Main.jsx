@@ -66,18 +66,21 @@ function Main() {
 
   const handlePrice = (e) => {
     setPrice(e.target.value);
+    // console.log(rating)
     setData(originaldata.filter((item)=>{
       return (
-        item.saleInfo.retailPrice.amount<=price
+        Number(item.volumeInfo.averageRating) <= Number(rating/10) && Number(item.saleInfo.retailPrice.amount) <= Number(price)
       )
     }))
   };
 
   const handleRating = (e) => {
     setRating(e.target.value);
+    // console.log(price)
     setData(originaldata.filter((item)=>{
       return (
-        item.volumeInfo.averageRating<=(rating/10)
+        Number(item.saleInfo.retailPrice.amount) <= Number(price) && Number(item.volumeInfo.averageRating) <= Number(rating/10)
+        
       )
     }))
 
