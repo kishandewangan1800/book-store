@@ -62,6 +62,8 @@ function Main() {
 
   const handleSubject = (e) => {
     setGenreType(e.target.value);
+    setPrice(10000);
+    setRating(50);
   };
 
   const handlePrice = 
@@ -83,9 +85,7 @@ function Main() {
     setRating(e.target.value);
     setData(originaldata.filter((item)=>{
       return (
-        Number(item.saleInfo.retailPrice.amount) <= Number(price) && Number(item.volumeInfo.averageRating) <= Number(rating/10)
-        
-      )
+        Number(item.saleInfo.retailPrice.amount) <= Number(price) && Number(item.volumeInfo.averageRating) <= Number(rating/10)      )
     }))
   },[originaldata, price, rating]);
 
